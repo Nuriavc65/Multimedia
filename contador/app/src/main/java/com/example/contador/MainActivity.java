@@ -25,12 +25,18 @@ public class MainActivity extends AppCompatActivity {
     ImageView img;
     int valorClick = 1;
     int costeBillete = 100;
-    BigInteger monedas = new BigInteger("0");
+    BigInteger monedas = new BigInteger("93");
     BigDecimal decimal;
     TextView nivel;
     ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
     //animacion del programa
     BigInteger mejoras = BigInteger.valueOf(1);
+
+    TextView nivel2;
+    int valorAutoClick = 1;
+
+    int costeBilleteAuto = 100;
+
 
 
     @Override
@@ -41,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         boton = (ImageView) findViewById(R.id.imageView);
         img = (ImageView) findViewById(R.id.imageView);
         nivel = (TextView) findViewById(R.id.nivel);
+        nivel2 = (TextView) findViewById(R.id.nivel2);
         fade_in.setDuration(100);
         sumarAuto();
     }
@@ -64,28 +71,40 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void subidaDeNivel (View v) {
-        int con = Integer.parseInt(contador.getText().toString());
-        if(con >= costeBillete) {
-            con = con - costeBillete;
-            String z = Integer.toString(con);
-            contador.setText(z);
+        if(monedas.longValue() > costeBillete) { // si el valor del contador es mayor o igual al
+            monedas = monedas.subtract(new BigInteger(Integer.toString(costeBillete)));
+            contador.setText(monedas.toString());
             valorClick++;
-            costeBillete = costeBillete + 50;
-            nivel.setText("ahora el valor es: " +Integer.toString(costeBillete));
+            costeBillete = costeBillete + 10;
+            nivel.setText("valor: " +Integer.toString(costeBillete));
+
         }
     }
-    public void  sumarAuto(){
-       Thread hilo = new Thread(()->{
-           while(true){
-               monedas = monedas.add(mejoras);
-               runOnUiThread(() -> contador.setText(monedas.toString()));
-               try {
-                   Thread.sleep(1000);
-               }catch (InterruptedException e){}
-           }
-       });
-       hilo.start();
+    public void  sumarAuto() {
+        Thread hilo = new Thread(() -> {
+            while (true) {
+                monedas = monedas.add(mejoras);
+                runOnUiThread(() -> {
+                    contador.setText(monedas.toString());
 
+                });
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                }
+            }
+        });
+        hilo.start();
+
+    }
+    public void SubidaAutoClick(){
+        if(monedas.longValue()>costeBilleteAuto){
+            monedas = monedas.subtract(new BigInteger(Integer.toString(costeBillete)));
+            contador.setText(monedas.toString());
+            valorAutoClick++;
+            costeBilleteAuto = costeBilleteAuto + 20;
+            nivel2.setText("valor: " +Integer.toString(costeBilleteAuto));
+        }
     }
 
 
