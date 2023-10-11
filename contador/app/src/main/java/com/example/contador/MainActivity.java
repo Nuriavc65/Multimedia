@@ -31,11 +31,13 @@ public class MainActivity extends AppCompatActivity {
     ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
     //animacion del programa
     BigInteger mejoras = BigInteger.valueOf(1);
-
     TextView nivel2;
     int valorAutoClick = 1;
-
     int costeBilleteAuto = 100;
+    ImageView botonAuto;
+
+
+
 
 
 
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         nivel2 = (TextView) findViewById(R.id.nivel2);
         fade_in.setDuration(100);
         sumarAuto();
+        botonAuto = (ImageView)findViewById(R.id.subidaAuto);
     }
     public void sumar( View v){
         monedas = monedas.add(BigInteger.valueOf(valorClick));
@@ -77,16 +80,16 @@ public class MainActivity extends AppCompatActivity {
             valorClick++;
             costeBillete = costeBillete + 10;
             nivel.setText("valor: " +Integer.toString(costeBillete));
+            monedas = monedas.add(BigInteger.valueOf(valorClick));
 
         }
     }
     public void  sumarAuto() {
         Thread hilo = new Thread(() -> {
             while (true) {
-                monedas = monedas.add(mejoras);
+                monedas = monedas.add(BigInteger.valueOf(valorAutoClick));
                 runOnUiThread(() -> {
                     contador.setText(monedas.toString());
-
                 });
                 try {
                     Thread.sleep(1000);
@@ -97,14 +100,16 @@ public class MainActivity extends AppCompatActivity {
         hilo.start();
 
     }
-    public void SubidaAutoClick(){
+    public void SubidaAutoClick(View v){
         if(monedas.longValue()>costeBilleteAuto){
-            monedas = monedas.subtract(new BigInteger(Integer.toString(costeBillete)));
+            monedas = monedas.subtract(new BigInteger(Integer.toString(costeBilleteAuto)));
             contador.setText(monedas.toString());
             valorAutoClick++;
             costeBilleteAuto = costeBilleteAuto + 20;
             nivel2.setText("valor: " +Integer.toString(costeBilleteAuto));
         }
+
+
     }
 
 
