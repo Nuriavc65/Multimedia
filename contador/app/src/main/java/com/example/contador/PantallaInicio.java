@@ -17,6 +17,10 @@ public class PantallaInicio extends AppCompatActivity {
         Intent abrir = new Intent(this,MainActivity.class);
         startActivity(abrir);
     }
+    public void pantallaInfo(View v){
+        Intent info = new Intent(this,infocontador.class);
+        startActivity(info);
+    }
     public void salir(){
         finish();
     }
