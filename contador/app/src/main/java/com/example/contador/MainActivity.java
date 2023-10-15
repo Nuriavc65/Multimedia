@@ -3,6 +3,7 @@ package com.example.contador;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -35,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
     int valorAutoClick = 1;
     int costeBilleteAuto = 100;
     ImageView botonAuto;
-
-
+    MediaPlayer musica = MediaPlayer.create(this,R.raw.coinsound);
 
 
 
@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         fade_in.setDuration(100);
         sumarAuto();
         botonAuto = (ImageView)findViewById(R.id.subidaAuto);
+        musica.start();
+
     }
     public void sumar( View v){
         monedas = monedas.add(BigInteger.valueOf(valorClick));
