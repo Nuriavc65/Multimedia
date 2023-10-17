@@ -16,6 +16,5 @@ public class infocontador extends AppCompatActivity {
         setContentView(R.layout.infocontador);
         texto1 = (TextView) findViewById(R.id.textView4);
         texto2 = (TextView) findViewById(R.id.textView5);
-
     }
 }

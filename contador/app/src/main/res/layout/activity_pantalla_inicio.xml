@@ -70,7 +70,7 @@
         android:id="@+id/textView2"
         android:layout_width="339dp"
         android:layout_height="107dp"
-        android:text="Welcome to the Conin´s game"
+        android:text="!!Welcome to the Coin´s game!!"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="40dp"

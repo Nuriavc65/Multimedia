@@ -1,23 +1,18 @@
 package com.example.contador;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
     int valorAutoClick = 1;
     int costeBilleteAuto = 100;
     ImageView botonAuto;
-    MediaPlayer musica = MediaPlayer.create(this,R.raw.coinsound);
+    MediaPlayer musica;
+    int m;
 
 
 
@@ -50,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         img = (ImageView) findViewById(R.id.imageView);
         nivel = (TextView) findViewById(R.id.nivel);
         nivel2 = (TextView) findViewById(R.id.nivel2);
+        musica = MediaPlayer.create(this, R.raw.coinsound);
         fade_in.setDuration(100);
         sumarAuto();
         botonAuto = (ImageView)findViewById(R.id.subidaAuto);
