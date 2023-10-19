@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Contador"
         tools:targetApi="31">
         <activity
+            android:name=".ComprasNivel"
+            android:exported="false" />
+        <activity
+            android:name=".PracticasTareas.Practica3"
+            android:exported="false" />
+        <activity
+            android:name=".PracticasTareas.Practica2"
+            android:exported="false" />
+        <activity
+            android:name=".practica_tarea.PracticaII"
+            android:exported="false"
+            android:label="@string/title_activity_practica_ii"
+            android:theme="@style/Theme.Contador" />
+        <activity
             android:name=".infocontador"
             android:exported="false" />
         <activity

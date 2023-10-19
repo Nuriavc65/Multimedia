@@ -10,8 +10,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="406dp"
-        android:layout_height="157dp"
+        android:layout_width="358dp"
+        android:layout_height="153dp"
         android:background="@drawable/stylo_border"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,6 +28,7 @@
             android:background="@android:color/transparent"
             android:onClick="salir"
             android:text="ESC"
+            android:textColor="@color/white"
             android:textSize="20dp" />
 
         <Button
@@ -37,6 +38,7 @@
             android:background="@android:color/transparent"
             android:onClick="pantallaJuego"
             android:text="PLAY"
+            android:textColor="@color/white"
             android:textSize="20dp" />
 
         <LinearLayout
@@ -51,6 +53,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:text="options"
+                android:textColor="@color/white"
                 android:textSize="20dp" />
 
             <Button
@@ -61,6 +64,7 @@
                 android:background="@android:color/transparent"
                 android:onClick="pantallaInfo"
                 android:text="info"
+                android:textColor="@color/white"
                 android:textSize="20dp" />
         </LinearLayout>
 
@@ -76,9 +80,9 @@
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.278" />
+        app:layout_constraintVertical_bias="0.277" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
