@@ -27,9 +27,9 @@ public class ComprasNivel extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        nivel = (TextView) findViewById(R.id.nivel);
-        nivel2 = (TextView) findViewById(R.id.nivel2);
-        botonAuto = (ImageView)findViewById(R.id.subidaAuto);
+        nivel = (TextView) findViewById(R.id.valorClicks);
+        nivel2 = (TextView) findViewById(R.id.valorAutoClick);
+        botonAuto = (ImageView)findViewById(R.id.botonSubidaAuto);
         setContentView(R.layout.activity_compras_nivel);
         sumarAuto();
         bundle = getIntent().getExtras();

@@ -8,137 +8,7 @@
     tools:context=".ComprasNivel">
 
 
-    <LinearLayout
-        android:layout_width="398dp"
-        android:layout_height="287dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.006"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="128dp"
-            android:background="#fe0000"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.908">
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="127dp"
-                android:layout_height="122dp"
-                android:onClick="subidaDeNivel"
-                android:src="@drawable/iconred" />
-
-            <LinearLayout
-                android:layout_width="217dp"
-                android:layout_height="match_parent"
-                android:background="#fe0000"
-                android:orientation="vertical"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="2dp"
-                tools:layout_editor_absoluteY="217dp">
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="aumenta clicks"
-                    android:textAlignment="center"
-                    android:textColor="#ffff"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/nivel"
-                    android:layout_width="match_parent"
-                    android:layout_height="44dp"
-                    android:layout_weight="1"
-                    android:text="valor: 100"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="aumenta el valor del click"
-                    android:textAlignment="center"
-                    android:textColor="#ffff"
-                    android:textSize="15dp" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="399dp"
-            android:layout_height="171dp"
-            android:background="#ffdb19"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.576">
-
-            <ImageView
-                android:id="@+id/subidaAuto"
-                android:layout_width="129dp"
-                android:layout_height="158dp"
-                android:onClick="SubidaAutoClick"
-                android:src="@drawable/iconyellow" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#ffdb19"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="54dp"
-                    android:text="Click auto"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/nivel2"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:text="valor: 100"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:text="aumenta valor auto click"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="15dp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </LinearLayout>
     <ImageView
         android:id="@+id/felcha"
         android:layout_width="94dp"
@@ -151,5 +21,123 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
+
+    <LinearLayout
+        android:layout_width="329dp"
+        android:layout_height="501dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="242dp"
+            android:background="@color/black"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/botonSubidaAuto"
+                android:layout_width="352dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="SubidaAutoClick"
+                app:srcCompat="@drawable/planetas" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/AutoClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="AutoClick"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/valorAutoClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="valor: 100"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/InfoAutoClick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="aumenta valor autoClick"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/subidaClicks"
+                android:layout_width="339dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="subidaDeNivel"
+                app:srcCompat="@drawable/lunar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/AumentoClicks"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:text="Aumenta Clicks"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/valorClicks"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:text="valor: 100"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/infoClicks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="aumenta valor click"
+                    android:textSize="15dp"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

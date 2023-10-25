@@ -94,8 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void irInicio(View v){
         Intent n = new Intent(this,PantallaInicio.class);
-
-
         startActivity(n);
     }
     public void comprasNivel (View v){
