@@ -33,11 +33,14 @@ public class ComprasNivel extends AppCompatActivity {
         setContentView(R.layout.activity_compras_nivel);
         sumarAuto();
         bundle = getIntent().getExtras();
-        monedas = new BigInteger(bundle.getString("monedas"));
-        contador = bundle.getString("contador");
-        valorClick = bundle.getInt("valorClick");
-        mejoras = new BigInteger(bundle.getString("mejoras"));
-        costeBilleteAuto = bundle.getInt("costeAuto");
+        if (bundle != null) {
+            monedas = new BigInteger(bundle.getString("monedas"));
+            contador = bundle.getString("contador");
+            valorClick = bundle.getInt("valorClick");
+            mejoras = new BigInteger(bundle.getString("mejoras"));
+            costeBilleteAuto = bundle.getInt("costeAuto");
+        }
+
 
     }
     public void subidaDeNivel (View v) {
@@ -76,8 +79,13 @@ public class ComprasNivel extends AppCompatActivity {
             nivel2.setText("valor: " +Integer.toString(costeBilleteAuto));
         }
     }
-    public void volver (){
-        Intent n = new Intent(this,PantallaInicio.class);
+    public void volver (View v){
+        Intent n = new Intent(this,MainActivity.class);
+        n.putExtra("monedas", monedas.toString());
+        n.putExtra("contador",contador);
+        n.putExtra("valorClick",valorClick);
+        n.putExtra("mejoras",mejoras.toString());
+        n.putExtra("costeAuto",costeBilleteAuto);
         startActivity(n);
     }
 }

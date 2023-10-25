@@ -143,7 +143,7 @@
         android:id="@+id/felcha"
         android:layout_width="94dp"
         android:layout_height="54dp"
-        android:onClick="pantallaInfo"
+        android:onClick="volver"
         android:src="@drawable/flecha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

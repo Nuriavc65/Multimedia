@@ -25,14 +25,13 @@ public class MainActivity extends AppCompatActivity {
     BigDecimal decimal;
     ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
     //animacion del programa
-    BigInteger mejoras = BigInteger.valueOf(1);
+    BigInteger mejoras = new BigInteger("1");
     int valorAutoClick = 1;
     int costeBilleteAuto = 100;
 
     MediaPlayer musica;
     int m;
-
-
+    Bundle bundle;
 
 
     @Override
@@ -44,6 +43,17 @@ public class MainActivity extends AppCompatActivity {
         musica = MediaPlayer.create(this, R.raw.coinsound);
         fade_in.setDuration(100);
         musica.start();
+        sumarAuto();
+        bundle = getIntent().getExtras();
+        if (bundle != null) {
+        monedas = new BigInteger(bundle.getString("monedas"));
+        contador.setText(bundle.getString("contador"));
+        valorClick = bundle.getInt("valorClick");
+        mejoras = new BigInteger(bundle.getString("mejoras"));
+        costeBilleteAuto = bundle.getInt("costeAuto");
+
+        }
+
 
     }
     public void sumar( View v){
@@ -84,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void irInicio(View v){
         Intent n = new Intent(this,PantallaInicio.class);
+
+
         startActivity(n);
     }
     public void comprasNivel (View v){
@@ -94,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         n.putExtra("mejoras",mejoras.toString());
         n.putExtra("costeAuto",costeBilleteAuto);
         startActivity(n);
+
     }
 
 
