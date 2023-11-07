@@ -24,9 +24,9 @@ public class infocontador extends AppCompatActivity {
         texto2 = (TextView) findViewById(R.id.textView5);
 
        List <Info> l = Arrays.asList(
-            new Info("Lenguaje usado", "java", R.drawable.moon4),
-            new Info("Tiempon de llorera", "3 dias", R.id.textView4),
-            new Info("Imagenes", "pinterest",R.id.botonSubidaAuto)
+            new Info("Lenguaje usado", "java", R.drawable.moon4), //ok
+            new Info("Tiempon de llorera", "10 dias", R.drawable.lunar), //not ok
+            new Info("Imagenes", "pinterest",R.drawable.planetas)
         );
        ListView lv = (ListView) findViewById(R.id.listView);
        Info_adaptador upgrade = new Info_adaptador(this, R.layout.esquema,l);

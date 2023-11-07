@@ -1,5 +1,6 @@
 package com.example.contador;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -21,7 +22,12 @@ public class PantallaInicio extends AppCompatActivity {
         Intent info = new Intent(this,infocontador.class);
         startActivity(info);
     }
-    public void salir(){
-        finish();
+    public void salir(View v){
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        dialog.setMessage("¿Estas seguro que quieres salir?")
+                .setIcon(R.drawable.carrito)
+                .setPositiveButton("Si",(_x,_y) -> finish())
+                .setNegativeButton("no",null)
+                .show();
     }
 }

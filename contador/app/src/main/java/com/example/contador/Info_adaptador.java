@@ -27,9 +27,9 @@ public class Info_adaptador extends ArrayAdapter<Info> {
         }
         ((ImageView) convertView.findViewById(R.id.img)).setImageResource(info.getImage());
         ((TextView) convertView.findViewById(R.id.texto)).setText(info.getTexto());
-        ((TextView) convertView.findViewById(R.id.texto)).setTextColor(Color.BLACK);
+        ((TextView) convertView.findViewById(R.id.texto)).setTextColor(Color.WHITE);
         ((TextView) convertView.findViewById(R.id.subTexto)).setText(info.getTextoMenor());
-        ((TextView) convertView.findViewById(R.id.subTexto)).setTextColor(Color.BLACK);
+        ((TextView) convertView.findViewById(R.id.subTexto)).setTextColor(Color.WHITE);
 
 
 

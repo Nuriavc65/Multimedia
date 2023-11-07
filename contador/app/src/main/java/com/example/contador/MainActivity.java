@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
             valorClick = bundle.getInt("valorClick");
             mejoras = new BigInteger(bundle.getString("mejoras"));
             costeBilleteAuto = bundle.getInt("costeAuto");
+            valorAutoClick = bundle.getInt("botonAuto");
+            costeBillete = bundle.getInt("costeClick");
 
         }
 
@@ -109,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
         n.putExtra("valorClick", valorClick);
         n.putExtra("mejoras", mejoras.toString());
         n.putExtra("costeAuto", costeBilleteAuto);
+        n.putExtra("botonAuto",valorAutoClick);
+        n.putExtra("costeClick",costeBillete);
         startActivity(n);
         finish();
 
