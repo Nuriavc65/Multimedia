@@ -31,8 +31,6 @@ public class Info_adaptador extends ArrayAdapter<Info> {
         ((TextView) convertView.findViewById(R.id.subTexto)).setText(info.getTextoMenor());
         ((TextView) convertView.findViewById(R.id.subTexto)).setTextColor(Color.WHITE);
 
-
-
         return convertView;
     }
 
