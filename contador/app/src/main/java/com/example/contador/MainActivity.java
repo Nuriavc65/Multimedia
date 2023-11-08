@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView img;
     int valorClick = 1;
     int costeBillete = 100;
-    BigInteger monedas = new BigInteger("93");
+    BigInteger monedas = new BigInteger("0");
     BigDecimal decimal;
     ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
     //animacion del programa
