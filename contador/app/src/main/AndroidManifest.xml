@@ -13,6 +13,11 @@
         android:theme="@style/Theme.Contador"
         tools:targetApi="31">
         <activity
+            android:name=".InicioSesion"
+            android:exported="false"
+            android:label="@string/title_activity_inicio_sesion"
+            android:theme="@style/Theme.Contador" />
+        <activity
             android:name=".ComprasNivel"
             android:exported="false" />
         <activity
