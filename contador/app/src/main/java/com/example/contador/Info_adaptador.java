@@ -27,8 +27,10 @@ public class Info_adaptador extends ArrayAdapter<Info> {
         }
         ((ImageView) convertView.findViewById(R.id.img)).setImageResource(info.getImage());
         ((TextView) convertView.findViewById(R.id.texto)).setText(info.getTexto());
+        //cambiar el color del texto como no se puede poner en la funcion de arriba
         ((TextView) convertView.findViewById(R.id.texto)).setTextColor(Color.WHITE);
         ((TextView) convertView.findViewById(R.id.subTexto)).setText(info.getTextoMenor());
+        //cambiar el color del texto como no se puede poner en la funcion de arriba
         ((TextView) convertView.findViewById(R.id.subTexto)).setTextColor(Color.WHITE);
 
         return convertView;

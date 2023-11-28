@@ -1,9 +1,9 @@
 package com.example.contador;
 
-public class Info {
+public class Info { //creamos el objeto Info que va a ser cada elemento del ListView para guardarlo mas comodo
     String texto;
     String textoMenor;
-    int image;
+    int image; //IMPORTANTE LAS IMAGENES SE GUARDAN EN INTS GILIPOLLAS QUE SEGURO QUE NO LO PONES :3
 
     public Info (String texto , String textoMenor, int image){
         this.image = image;
