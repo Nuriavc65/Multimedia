@@ -12,7 +12,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "table.db";
     private static final int Database_version = 1;
 
-    private static final String TABLE_NAME = "my_table";
+    private static final String TABLE_NAME = "User_login";
     private static final String column_id = "_id";
     private static final String column_name = "person_name";
     private static final String column_password = "person_password";
@@ -25,15 +25,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query = "create table" + TABLE_NAME+
-                        " (" + column_id + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        column_name + "TEXT," +
-                        column_password + "TEXT);";
+        String query =
+                "create TABLE " + TABLE_NAME+
+                        " (" + column_id + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        column_name + " TEXT, " +
+                        column_password + " TEXT);";
         db.execSQL(query);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("drop table if exists" + TABLE_NAME);
+        db.execSQL("drop table if exists " + TABLE_NAME);
+        onCreate(db);
     }
 }
