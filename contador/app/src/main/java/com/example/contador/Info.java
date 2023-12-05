@@ -14,11 +14,9 @@ public class Info { //creamos el objeto Info que va a ser cada elemento del List
     public String getTexto() {
         return texto;
     }
-
     public String getTextoMenor() {
         return textoMenor;
     }
-
     public int getImage() {
         return image;
     }

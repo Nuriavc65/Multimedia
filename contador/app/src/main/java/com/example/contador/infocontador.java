@@ -24,8 +24,8 @@ public class infocontador extends AppCompatActivity {
         texto2 = (TextView) findViewById(R.id.textView5);
 
        List <Info> l = Arrays.asList(
-            new Info("Lenguaje usado", "java", R.drawable.treslunas), //ok
-            new Info("Tiempon de llorera", "10 dias", R.drawable.serpiente), //not ok
+            new Info("Lenguaje usado", "java", R.drawable.treslunas),
+            new Info("Tiempo de llorera", "10 dias", R.drawable.serpiente),
             new Info("Imagenes", "pinterest",R.drawable.lunas)
 
 
