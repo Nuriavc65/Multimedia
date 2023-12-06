@@ -1,8 +1,11 @@
 package com.example.contador;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -35,7 +38,34 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("drop table if exists " + TABLE_NAME);
-        onCreate(db);
+
+    }
+
+    void addUser(String user,String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(column_name,user.toUpperCase());
+        cv.put(column_password,password);
+        long result = db.insert(TABLE_NAME,null,cv);
+        if(result == -1){
+            Toast.makeText(context,"El usuario ya existe",Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(context, "Usuario añadido correctamente",Toast.LENGTH_SHORT).show();
+        }
+    }
+    void updateUser(User user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(column_name, user.getUser().toUpperCase());
+        db.update(TABLE_NAME, cv, column_name + " = "+user.getUser().toUpperCase(),null);
+    }
+    Cursor getUser (String user){
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + column_name + " = " + user.toUpperCase() + " ; ";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery(query, null);
+        }
+        return cursor;
     }
 }
