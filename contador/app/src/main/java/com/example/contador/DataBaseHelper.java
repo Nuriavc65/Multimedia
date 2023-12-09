@@ -19,6 +19,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String column_id = "_id";
     private static final String column_name = "person_name";
     private static final String column_password = "person_password";
+    private static final String column_precioAutoClick = "game_precioAutoClick";
+    private static final String column_valorAutoClick = "game_valorAutoClick";
+    private static final String column_precioClick = "game_precioClick";
+    private static final String column_valorClick = "game_valorClick";
+    private static final String column_valorLuna = "game_valorLuna";
 
 
     public DataBaseHelper(@Nullable Context context) {
@@ -32,20 +37,28 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "create TABLE " + TABLE_NAME+
                         " (" + column_id + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         column_name + " TEXT, " +
+                        column_precioAutoClick + "TEXT, " +
+                        column_valorAutoClick + "INT, " +
+                        column_precioClick + "TEXT, " +
+                        column_valorClick + "INT, " +
+                        column_valorLuna + "INT, " +
                         column_password + " TEXT);";
         db.execSQL(query);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-
-    }
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) { }
 
     void addUser(String user,String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(column_name,user.toUpperCase());
         cv.put(column_password,password);
+        cv.put(column_precioAutoClick,"100");
+        cv.put(column_valorAutoClick,1);
+        cv.put(column_precioClick,"100");
+        cv.put(column_valorClick,1);
+        cv.put(column_valorLuna,1);
         long result = db.insert(TABLE_NAME,null,cv);
         if(result == -1){
             Toast.makeText(context,"El usuario ya existe",Toast.LENGTH_SHORT).show();

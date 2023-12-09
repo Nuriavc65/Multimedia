@@ -40,7 +40,12 @@ public class login extends AppCompatActivity {
         });
         myDB = new DataBaseHelper(login.this);
     }
-    public void irRegirstro (View view){
+    public void irRegistro(View view) {
+        Intent i = new Intent(this, Registrer.class);
+        startActivity(i);
+        finish();
+    }
+    public void login (View view){
         Cursor cursor = myDB.getUser(usuarioTxt.getText().toString());
         if(cursor.getCount() > 0){
             cursor.moveToNext();

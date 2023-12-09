@@ -30,7 +30,7 @@
         android:layout_width="246dp"
         android:layout_height="66dp"
         android:ems="10"
-        android:hint="Confirm  CPassword"
+        android:hint="Confirm Password"
         android:textColorHint="@color/white"
         android:inputType="textPassword"
         android:textColor="@color/white"
