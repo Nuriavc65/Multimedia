@@ -68,7 +68,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         cv.put(column_precioClick, user.getAutoClick());
         cv.put(column_valorClick, user.getClick());
         cv.put(column_valorLuna, user.getClicker());
-        db.update(TABLE_NAME, cv, column_name, new String[]{user.getUser().toUpperCase()});
+        db.update(TABLE_NAME, cv, column_name + " = ?", new String[]{user.getUser().toUpperCase()});
     }
 
     Cursor getUser(String user) {

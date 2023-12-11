@@ -49,15 +49,6 @@ public class MainActivity extends AppCompatActivity {
         sumarAuto();
         bundle = getIntent().getExtras();
         if (bundle != null) {
-//            Log.d("nuria", "main-aprende a programar");
-//            monedas = new BigInteger(bundle.getString("monedas"));
-//            contador.setText(bundle.getString("contador"));
-//            valorClick = bundle.getInt("valorClick");
-//            mejoras = new BigInteger(bundle.getString("mejoras"));
-//            costeBilleteAuto = bundle.getInt("costeAuto");
-//            valorAutoClick = bundle.getInt("botonAuto");
-//            costeBillete = bundle.getInt("costeClick");
-//
             user = (User) bundle.getSerializable("USER");
             userNick = user.getUser();
             monedas = new BigInteger(user.getClicker());
@@ -115,13 +106,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void comprasNivel(View v) {
         Intent n = new Intent(this, ComprasNivelActivity.class);
-        n.putExtra("monedas", monedas.toString());
-        n.putExtra("contador", contador.toString());
-        n.putExtra("valorClick", valorClick);
-        n.putExtra("mejoras", mejoras.toString());
-        n.putExtra("costeAuto", costeBilleteAuto);
-        n.putExtra("botonAuto", valorAutoClick);
-        n.putExtra("costeClick", costeBillete);
+//        n.putExtra("monedas", monedas.toString());
+//        n.putExtra("contador", contador.toString());
+//        n.putExtra("valorClick", valorClick);
+//        n.putExtra("mejoras", mejoras.toString());
+//        n.putExtra("costeAuto", costeBilleteAuto);
+//        n.putExtra("botonAuto", valorAutoClick);
+//        n.putExtra("costeClick", costeBillete);
+        user = new User(user.getUser(), costeBilleteAuto, costeBillete, valorAutoClick, valorClick, monedas.toString(), user.getPassword());
+        n.putExtra("USER", user);
         startActivity(n);
         finish();
 
