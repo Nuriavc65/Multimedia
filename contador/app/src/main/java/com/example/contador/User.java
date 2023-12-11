@@ -3,15 +3,15 @@ package com.example.contador;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    String user;
-    String password;
-    String precioAutoClick;
-    String precioClick;
-    int autoClick;
-    int click;
-    int clicker;
+    String user; //
+    String password; //
+    int precioAutoClick; //costeBilleteAuto
+    int precioClick; //costeBillete
+    int autoClick; //valorAutoClick
+    int click; //valorClick
+    String clicker; //monedas
 
-    public User (String user ,String password,String precioAutoClick,String precioClick,int autoClick,int click,int clicker ){
+    public User (String user ,String password,int precioAutoClick,int precioClick,int autoClick,int click,String clicker ){
         this.user = user;
         this.password = password;
         this.precioAutoClick = precioAutoClick;
@@ -35,11 +35,14 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    public String getPrecioAutoClick (){return precioAutoClick; }
-    public void setPrecioAutoClick(String precioAutoClick){ this.precioAutoClick = precioAutoClick; }
-    public String getPrecioClick(){return precioClick;}
-    public void setPrecioClick(String precioClick){this.precioClick = precioClick;}
+    public int getPrecioAutoClick (){return precioAutoClick; }
+    public void setPrecioAutoClick(int precioAutoClick){ this.precioAutoClick = precioAutoClick; }
+    public int getPrecioClick(){return precioClick;}
+    public void setPrecioClick(int precioClick){this.precioClick = precioClick;}
     public int getAutoClick(){return autoClick;}
     public void setAutoClick(int autoClick){this.autoClick = autoClick;}
-    public int getClick(){return }
+    public int getClick(){ return click; }
+    public void setClick(int click){this.click = click;}
+    public  String getClicker(){return clicker; }
+    public void setClicker(String clicker){this.clicker = clicker;}
 }

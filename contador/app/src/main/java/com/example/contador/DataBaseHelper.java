@@ -70,6 +70,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(column_name, user.getUser().toUpperCase());
+        cv.put(column_precioAutoClick, user.getPrecioAutoClick());
+        cv.put(column_valorAutoClick, user.getPrecioClick());
+        cv.put(column_precioClick, user.getAutoClick());
+        cv.put(column_valorClick, user.getClick());
+        cv.put(column_valorLuna, user.getClicker());
         db.update(TABLE_NAME, cv, column_name + " = "+user.getUser().toUpperCase(),null);
     }
     Cursor getUser (String user){

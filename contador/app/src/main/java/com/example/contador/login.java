@@ -55,7 +55,12 @@ public class login extends AppCompatActivity {
             }else{
                 user = new User(
                         cursor.getString(0),
-                        cursor.getString(1));
+                        cursor.getString(1),
+                        cursor.getInt(2),
+                        cursor.getInt(3),
+                        cursor.getInt(4),
+                        cursor.getInt(5),
+                        cursor.getString(6));
                 Intent in = new Intent(this, MainActivity.class);
                 in.putExtra("USER", user);
                 startActivity(in);

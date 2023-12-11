@@ -20,20 +20,22 @@ public class MainActivity extends AppCompatActivity {
 
     TextView contador;
     ImageView img;
-    int valorClick = 1;
-    int costeBillete = 100;
-    BigInteger monedas = new BigInteger("0");
+    int valorClick = 1; //click
+    int costeBillete = 100; //precioclick
+    BigInteger monedas = new BigInteger("0"); //clicker
     BigDecimal decimal;
     ScaleAnimation fade_in = new ScaleAnimation(0.7f, 1.2f, 0.7f, 1.2f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
     //animacion del programa
     BigInteger mejoras = new BigInteger("1");
-    int valorAutoClick = 1;
-    int costeBilleteAuto = 100;
-
+    int valorAutoClick = 1; //autoclick
+    int costeBilleteAuto = 100; //precioautoclick
     MediaPlayer musica;
-    int m;
     Bundle bundle;
 
+
+    String userNick;
+    DataBaseHelper myDB;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
             costeBilleteAuto = bundle.getInt("costeAuto");
             valorAutoClick = bundle.getInt("botonAuto");
             costeBillete = bundle.getInt("costeClick");
+
 
         }
 
@@ -116,6 +119,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(n);
         finish();
 
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        myDB = new DataBaseHelper(MainActivity.this);
+        user = new User(
+                user.getUser(),
+                user.getPassword(),
+                costeBilleteAuto,
+                costeBillete,
+                valorAutoClick,
+                valorClick,
+                monedas.toString());
+        myDB.updateUser(user);
     }
 
 
