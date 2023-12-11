@@ -1,7 +1,5 @@
 package com.example.contador;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,9 +7,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.math.BigInteger;
 
-public class ComprasNivel extends AppCompatActivity {
+public class ComprasNivelActivity extends AppCompatActivity {
     ImageView botonAuto;
     TextView nivel;
     TextView nivel2;
@@ -31,9 +31,9 @@ public class ComprasNivel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compras_nivel);
 
-        nivel = (TextView) findViewById(R.id.valorClicks);
-        nivel2 = (TextView) findViewById(R.id.valorAutoClick);
-        botonAuto = (ImageView) findViewById(R.id.botonSubidaAuto);
+        nivel = findViewById(R.id.valorClicks);
+        nivel2 = findViewById(R.id.valorAutoClick);
+        botonAuto = findViewById(R.id.botonSubidaAuto);
 
 
         sumarAuto();
@@ -48,8 +48,8 @@ public class ComprasNivel extends AppCompatActivity {
             valorAutoClick = bundle.getInt("botonAuto");
             costeBillete = bundle.getInt("costeClick");
         }
-        nivel2.setText("valor: " + Integer.toString(costeBilleteAuto));
-        nivel.setText("valor: " + Integer.toString(costeBillete));
+        nivel2.setText("valor: " + costeBilleteAuto);
+        nivel.setText("valor: " + costeBillete);
 
     }
 
@@ -59,7 +59,7 @@ public class ComprasNivel extends AppCompatActivity {
             contador = monedas.toString();
             valorClick++;
             costeBillete = costeBillete + 10;
-            nivel.setText("valor: " + Integer.toString(costeBillete));
+            nivel.setText("valor: " + costeBillete);
             monedas = monedas.add(BigInteger.valueOf(valorClick));
 
         }
@@ -88,7 +88,7 @@ public class ComprasNivel extends AppCompatActivity {
             contador = monedas.toString();
             valorAutoClick++;
             costeBilleteAuto = costeBilleteAuto + 20;
-            nivel2.setText("valor: " + Integer.toString(costeBilleteAuto));
+            nivel2.setText("valor: " + costeBilleteAuto);
         }
     }
 
@@ -99,8 +99,8 @@ public class ComprasNivel extends AppCompatActivity {
         n.putExtra("valorClick", valorClick);
         n.putExtra("mejoras", mejoras.toString());
         n.putExtra("costeAuto", costeBilleteAuto);
-        n.putExtra("botonAuto",valorAutoClick);
-        n.putExtra("costeClick",costeBillete);
+        n.putExtra("botonAuto", valorAutoClick);
+        n.putExtra("costeClick", costeBillete);
         startActivity(n);
         finish();
     }

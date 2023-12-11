@@ -13,39 +13,19 @@
         android:theme="@style/Theme.Contador"
         tools:targetApi="31">
         <activity
-            android:name=".Registrer"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".InicioSesion"
-            android:exported="false"
-            android:label="@string/title_activity_inicio_sesion"
-            android:theme="@style/Theme.Contador" />
-        <activity
-            android:name=".ComprasNivel"
+            android:name=".ComprasNivelActivity"
             android:exported="false" />
         <activity
-            android:name=".PracticasTareas.Practica3"
+            android:name=".InfoContadorActivity"
             android:exported="false" />
         <activity
-            android:name=".PracticasTareas.Practica2"
-            android:exported="false" />
-        <activity
-            android:name=".practica_tarea.PracticaII"
-            android:exported="false"
-            android:label="@string/title_activity_practica_ii"
-            android:theme="@style/Theme.Contador" />
-        <activity
-            android:name=".infocontador"
-            android:exported="false" />
-        <activity
-            android:name=".info"
-            android:exported="false"
-            android:label="@string/title_activity_info" />
-        <activity
-            android:name=".PantallaInicio"
+            android:name=".PantallaInicioActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

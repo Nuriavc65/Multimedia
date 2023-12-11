@@ -41,24 +41,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        contador = (TextView) findViewById(R.id.textoContador);
-        img = (ImageView) findViewById(R.id.imageView);
+        contador = findViewById(R.id.textoContador);
+        img = findViewById(R.id.imageView);
         musica = MediaPlayer.create(this, R.raw.coinsound);
         fade_in.setDuration(100);
         musica.start();
         sumarAuto();
         bundle = getIntent().getExtras();
         if (bundle != null) {
-            Log.d("nuria", "main-aprende a programar");
-            monedas = new BigInteger(bundle.getString("monedas"));
-            contador.setText(bundle.getString("contador"));
-            valorClick = bundle.getInt("valorClick");
-            mejoras = new BigInteger(bundle.getString("mejoras"));
-            costeBilleteAuto = bundle.getInt("costeAuto");
-            valorAutoClick = bundle.getInt("botonAuto");
-            costeBillete = bundle.getInt("costeClick");
-
-
+//            Log.d("nuria", "main-aprende a programar");
+//            monedas = new BigInteger(bundle.getString("monedas"));
+//            contador.setText(bundle.getString("contador"));
+//            valorClick = bundle.getInt("valorClick");
+//            mejoras = new BigInteger(bundle.getString("mejoras"));
+//            costeBilleteAuto = bundle.getInt("costeAuto");
+//            valorAutoClick = bundle.getInt("botonAuto");
+//            costeBillete = bundle.getInt("costeClick");
+//
+            user = (User) bundle.getSerializable("USER");
+            userNick = user.getUser();
+            monedas = new BigInteger(user.getClicker());
+            valorClick = user.getClick();
+            mejoras = new BigInteger("1");
+            costeBillete = user.getPrecioClick();
+            costeBilleteAuto = user.getPrecioAutoClick();
         }
 
 
@@ -77,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if (monedas.longValue() > 10000) { //1000d d de double para obtener el numero decimal --> monedas >= 10000
             decimal = BigDecimal.valueOf(monedas.longValue() / 1000d);
-            contador.setText(decimal.toString().substring(0, 1) + "M");
+            contador.setText(decimal.toString().charAt(0) + "M");
         } else {
             contador.setText(monedas.toString()); //como texto es un String hay que pasar el numero a String
         }
@@ -102,36 +108,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void irInicio(View v) {
-        Intent n = new Intent(this, PantallaInicio.class);
+        Intent n = new Intent(this, PantallaInicioActivity.class);
         startActivity(n);
         finish();
     }
 
     public void comprasNivel(View v) {
-        Intent n = new Intent(this, ComprasNivel.class);
+        Intent n = new Intent(this, ComprasNivelActivity.class);
         n.putExtra("monedas", monedas.toString());
         n.putExtra("contador", contador.toString());
         n.putExtra("valorClick", valorClick);
         n.putExtra("mejoras", mejoras.toString());
         n.putExtra("costeAuto", costeBilleteAuto);
-        n.putExtra("botonAuto",valorAutoClick);
-        n.putExtra("costeClick",costeBillete);
+        n.putExtra("botonAuto", valorAutoClick);
+        n.putExtra("costeClick", costeBillete);
         startActivity(n);
         finish();
 
     }
+
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         myDB = new DataBaseHelper(MainActivity.this);
-        user = new User(
-                user.getUser(),
-                user.getPassword(),
-                costeBilleteAuto,
-                costeBillete,
-                valorAutoClick,
-                valorClick,
-                monedas.toString());
+        user = new User(user.getUser(), costeBilleteAuto, costeBillete, valorAutoClick, valorClick, monedas.toString(), user.getPassword());
         myDB.updateUser(user);
     }
 

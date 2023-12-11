@@ -15,15 +15,16 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 public class Info_adaptador extends ArrayAdapter<Info> {
-    List <Info> infos;
+    List<Info> infos;
 
-    public Info_adaptador(@NonNull Context context, int resource, @NonNull List<Info>infos) {
+    public Info_adaptador(@NonNull Context context, int resource, @NonNull List<Info> infos) {
         super(context, resource, infos);
     }
-    public View getView (int posicion, @Nullable View convertView, @NonNull ViewGroup parent){
+
+    public View getView(int posicion, @Nullable View convertView, @NonNull ViewGroup parent) {
         Info info = getItem(posicion);
-        if(convertView == null){
-            convertView = LayoutInflater.from(this.getContext()).inflate(R.layout.esquema,parent,false);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(this.getContext()).inflate(R.layout.esquema, parent, false);
         }
         ((ImageView) convertView.findViewById(R.id.img)).setImageResource(info.getImage());
         ((TextView) convertView.findViewById(R.id.texto)).setText(info.getTexto());
