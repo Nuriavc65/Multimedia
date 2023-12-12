@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             userNick = user.getUser();
             monedas = new BigInteger(user.getClicker());
             valorClick = user.getClick();
+            valorAutoClick = user.getAutoClick();
             mejoras = new BigInteger("1");
             costeBillete = user.getPrecioClick();
             costeBilleteAuto = user.getPrecioAutoClick();
