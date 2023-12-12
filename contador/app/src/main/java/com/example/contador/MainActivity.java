@@ -106,13 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void comprasNivel(View v) {
         Intent n = new Intent(this, ComprasNivelActivity.class);
-//        n.putExtra("monedas", monedas.toString());
-//        n.putExtra("contador", contador.toString());
-//        n.putExtra("valorClick", valorClick);
-//        n.putExtra("mejoras", mejoras.toString());
-//        n.putExtra("costeAuto", costeBilleteAuto);
-//        n.putExtra("botonAuto", valorAutoClick);
-//        n.putExtra("costeClick", costeBillete);
         user = new User(user.getUser(), costeBilleteAuto, costeBillete, valorAutoClick, valorClick, monedas.toString(), user.getPassword());
         n.putExtra("USER", user);
         startActivity(n);

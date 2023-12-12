@@ -53,7 +53,6 @@ public class LoginActivity extends AppCompatActivity {
             } else {
                 user = new User(
                         cursor.getString(1),
-//                        cursor.getString(1),
                         cursor.getInt(2),
                         cursor.getInt(3),
                         cursor.getInt(4),
